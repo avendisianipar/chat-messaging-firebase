@@ -12,14 +12,21 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
+protocol DBRepresentation {
+    var representation: [String: Any] { get }
+}
+
 struct MessageModel: MessageType {
     let id: String?
+
     var messageId: String {
         return id ?? UUID().uuidString
     }
+    
     let content: String
     let sentDate: Date
     let sender: SenderType
+    
     var kind: MessageKind {
         if let image = image {
             let mediaItem = ImageMediaItem(image: image)
@@ -74,8 +81,8 @@ struct MessageModel: MessageType {
     }
 }
 
-// MARK: - DatabaseRepresentation
-extension MessageModel: DatabaseRepresentation {
+// MARK: - DBRepresentation
+extension MessageModel: DBRepresentation {
     var representation: [String: Any] {
         var rep: [String: Any] = [
             "created": sentDate,

@@ -29,7 +29,7 @@ struct ChannelsModel {
 }
 
 // MARK: - DatabaseRepresentation
-extension ChannelsModel: DatabaseRepresentation {
+extension ChannelsModel: DBRepresentation {
     var representation: [String: Any] {
         var rep = ["name": name]
         

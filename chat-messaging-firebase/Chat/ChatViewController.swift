@@ -71,16 +71,23 @@ class ChatViewController: MessagesViewController {
         reference = database.collection("channels/\(id)/thread")
         
         messageListener = reference?.addSnapshotListener { [weak self] querySnapshot, error in
-            guard let self = self,
-                let snapshot = querySnapshot
-            else {
+            guard let self = self, let snapshot = querySnapshot else {
                 print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
                 return
             }
             
+            let isFirstLoad = messages.isEmpty
+            
             snapshot.documentChanges.forEach { change in
                 self.handleDocumentChange(change)
             }
+            
+            if isFirstLoad {
+                DispatchQueue.main.async {
+                    self.messagesCollectionView.scrollToLastItem(animated: false)
+                }
+            }
+            
         }
     }
 }
@@ -145,10 +152,10 @@ private extension ChatViewController {
         let picker = UIImagePickerController()
         picker.delegate = self
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
-        } else {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             picker.sourceType = .photoLibrary
+        } else {
+            picker.sourceType = .camera
         }
         
         present(picker, animated: true)
