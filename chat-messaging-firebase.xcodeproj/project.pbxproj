@@ -6,6 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F4278C1B2D415B0B00CAE0AB /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4278C1A2D415B0B00CAE0AB /* MessageKit */; };
+		F4CD8B672D41EFF100A7B33B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B662D41EFF100A7B33B /* FirebaseAnalytics */; };
+		F4CD8B692D41EFF100A7B33B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B682D41EFF100A7B33B /* FirebaseAuth */; };
+		F4CD8B6B2D41EFF100A7B33B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B6A2D41EFF100A7B33B /* FirebaseCore */; };
+		F4CD8B6D2D41EFF100A7B33B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B6C2D41EFF100A7B33B /* FirebaseCrashlytics */; };
+		F4CD8B6F2D41EFF100A7B33B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B6E2D41EFF100A7B33B /* FirebaseDatabase */; };
+		F4CD8B712D41EFF100A7B33B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B702D41EFF100A7B33B /* FirebaseFirestore */; };
+		F4CD8B732D41EFF100A7B33B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B722D41EFF100A7B33B /* FirebaseMessaging */; };
+		F4CD8B752D41EFF100A7B33B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F4CD8B742D41EFF100A7B33B /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F409CC022D414E49005EA0B1 /* chat-messaging-firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-messaging-firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -14,7 +26,7 @@
 		F409CC142D414E4B005EA0B1 /* Exceptions for "chat-messaging-firebase" folder in "chat-messaging-firebase" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Assets/Info.plist,
 			);
 			target = F409CC012D414E48005EA0B1 /* chat-messaging-firebase */;
 		};
@@ -36,6 +48,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CD8B732D41EFF100A7B33B /* FirebaseMessaging in Frameworks */,
+				F4CD8B6F2D41EFF100A7B33B /* FirebaseDatabase in Frameworks */,
+				F4CD8B752D41EFF100A7B33B /* FirebaseStorage in Frameworks */,
+				F4CD8B672D41EFF100A7B33B /* FirebaseAnalytics in Frameworks */,
+				F4CD8B692D41EFF100A7B33B /* FirebaseAuth in Frameworks */,
+				F4CD8B6D2D41EFF100A7B33B /* FirebaseCrashlytics in Frameworks */,
+				F4CD8B6B2D41EFF100A7B33B /* FirebaseCore in Frameworks */,
+				F4278C1B2D415B0B00CAE0AB /* MessageKit in Frameworks */,
+				F4CD8B712D41EFF100A7B33B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +99,15 @@
 			);
 			name = "chat-messaging-firebase";
 			packageProductDependencies = (
+				F4278C1A2D415B0B00CAE0AB /* MessageKit */,
+				F4CD8B662D41EFF100A7B33B /* FirebaseAnalytics */,
+				F4CD8B682D41EFF100A7B33B /* FirebaseAuth */,
+				F4CD8B6A2D41EFF100A7B33B /* FirebaseCore */,
+				F4CD8B6C2D41EFF100A7B33B /* FirebaseCrashlytics */,
+				F4CD8B6E2D41EFF100A7B33B /* FirebaseDatabase */,
+				F4CD8B702D41EFF100A7B33B /* FirebaseFirestore */,
+				F4CD8B722D41EFF100A7B33B /* FirebaseMessaging */,
+				F4CD8B742D41EFF100A7B33B /* FirebaseStorage */,
 			);
 			productName = "chat-messaging-firebase";
 			productReference = F409CC022D414E49005EA0B1 /* chat-messaging-firebase.app */;
@@ -107,6 +137,10 @@
 			);
 			mainGroup = F409CBF92D414E48005EA0B1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F4278C192D415B0B00CAE0AB /* XCRemoteSwiftPackageReference "MessageKit" */,
+				F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F409CC032D414E49005EA0B1 /* Products */;
 			projectDirPath = "";
@@ -145,20 +179,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H274WX6PRY;
+				DEVELOPMENT_TEAM = M7R6QZ3L57;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "chat-messaging-firebase/Info.plist";
+				INFOPLIST_FILE = "chat-messaging-firebase/Assets/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avendi.rnd.chat-messaging-firebase";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alfamart.alfagift.rnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -173,20 +208,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H274WX6PRY;
+				DEVELOPMENT_TEAM = M7R6QZ3L57;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "chat-messaging-firebase/Info.plist";
+				INFOPLIST_FILE = "chat-messaging-firebase/Assets/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avendi.rnd.chat-messaging-firebase";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alfamart.alfagift.rnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -335,6 +371,73 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4278C192D415B0B00CAE0AB /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 11.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4278C1A2D415B0B00CAE0AB /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4278C192D415B0B00CAE0AB /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		F4CD8B662D41EFF100A7B33B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F4CD8B682D41EFF100A7B33B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F4CD8B6A2D41EFF100A7B33B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F4CD8B6C2D41EFF100A7B33B /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F4CD8B6E2D41EFF100A7B33B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F4CD8B702D41EFF100A7B33B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F4CD8B722D41EFF100A7B33B /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		F4CD8B742D41EFF100A7B33B /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CD8B652D41EFF100A7B33B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F409CBFA2D414E48005EA0B1 /* Project object */;
 }
