@@ -35,13 +35,13 @@ final class ChatViewController: MessagesViewController {
     private var messageListener: ListenerRegistration?
     
     private let user: User
-    private let channel: Channel
+    private let channel: ChannelsModel
     
     deinit {
         messageListener?.remove()
     }
     
-    init(user: User, channel: Channel) {
+    init(user: User, channel: ChannelsModel) {
         self.user = user
         self.channel = channel
         super.init(nibName: nil, bundle: nil)
@@ -85,8 +85,8 @@ final class ChatViewController: MessagesViewController {
     
     private func setUpMessageView() {
         maintainPositionOnKeyboardFrameChanged = true
-        messageInputBar.inputTextView.tintColor = .primary
-        messageInputBar.sendButton.setTitleColor(.primary, for: .normal)
+        messageInputBar.inputTextView.tintColor = .base
+        messageInputBar.sendButton.setTitleColor(.base, for: .normal)
         
         messageInputBar.delegate = self
         messagesCollectionView.messagesDataSource = self
@@ -114,7 +114,7 @@ final class ChatViewController: MessagesViewController {
     
     private func addCameraBarButton() {
         let cameraItem = InputBarButtonItem(type: .system)
-        cameraItem.tintColor = .primary
+        cameraItem.tintColor = .base
         cameraItem.image = UIImage(named: "camera")
         cameraItem.addTarget(
             self,
@@ -199,7 +199,7 @@ final class ChatViewController: MessagesViewController {
     
     private func uploadImage(
         _ image: UIImage,
-        to channel: Channel,
+        to channel: ChannelsModel,
         completion: @escaping (URL?) -> Void
     ) {
         guard
@@ -258,7 +258,7 @@ final class ChatViewController: MessagesViewController {
 // MARK: - MessagesDisplayDelegate
 extension ChatViewController: MessagesDisplayDelegate {
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .primary : .incomingMessages
+        return isFromCurrentSender(message: message) ? .messageSender : .messageRecipient
     }
     
     func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
@@ -289,7 +289,7 @@ extension ChatViewController: MessagesLayoutDelegate {
 extension ChatViewController: MessagesDataSource {
     
     var currentSender: any MessageKit.SenderType {
-        return Sender(senderId: user.uid, displayName: AppSettings.displayName)
+        return SenderModel(senderId: user.uid, displayName: AppSettings.displayName)
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessageKit.MessagesCollectionView) -> any MessageKit.MessageType {

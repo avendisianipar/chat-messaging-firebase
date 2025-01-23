@@ -41,7 +41,7 @@ final class AppController {
         }
         
         self.window = window
-        window.tintColor = .primary
+        window.tintColor = .base
         window.backgroundColor = .white
         
         handleAppState()

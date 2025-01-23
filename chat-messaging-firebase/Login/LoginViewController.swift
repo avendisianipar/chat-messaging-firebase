@@ -9,38 +9,38 @@ import UIKit
 import FirebaseAuth
 
 final class LoginViewController: UIViewController {
+    
     @IBOutlet private var actionButton: UIButton!
     @IBOutlet private var fieldBackingView: UIView!
     @IBOutlet private var displayNameField: UITextField!
     @IBOutlet private var actionButtonBackingView: UIView!
     @IBOutlet private var bottomConstraint: NSLayoutConstraint!
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fieldBackingView.smoothRoundCorners(to: 8)
-        actionButtonBackingView.smoothRoundCorners(to: actionButtonBackingView.bounds.height / 2)
-        
-        displayNameField.tintColor = .primary
+        displayNameField.tintColor = .base
         displayNameField.addTarget(
             self,
             action: #selector(textFieldDidReturn),
-            for: .primaryActionTriggered)
+            for: .primaryActionTriggered
+        )
         
         registerForKeyboardNotifications()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        fieldBackingView.smoothRoundCorners(to: 8)
+        actionButtonBackingView.smoothRoundCorners(to: actionButtonBackingView.bounds.height / 2)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         displayNameField.becomeFirstResponder()
     }
     
-    // MARK: - Actions
     @IBAction private func actionButtonPressed() {
         signIn()
     }
@@ -48,26 +48,12 @@ final class LoginViewController: UIViewController {
     @objc private func textFieldDidReturn() {
         signIn()
     }
-    
-    // MARK: - Helpers
-    private func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow(_:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide(_:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
-    }
-    
-    private func signIn() {
+}
+
+private extension LoginViewController {
+    func signIn() {
         guard
-            let name = displayNameField.text,
-            !name.isEmpty
+            let name = displayNameField.text, !name.isEmpty
         else {
             showMissingNameAlert()
             return
@@ -79,7 +65,7 @@ final class LoginViewController: UIViewController {
         Auth.auth().signInAnonymously()
     }
     
-    private func showMissingNameAlert() {
+    func showMissingNameAlert() {
         let alertController = UIAlertController(
             title: "Display Name Required",
             message: "Please enter a display name.",
@@ -94,8 +80,24 @@ final class LoginViewController: UIViewController {
         present(alertController, animated: true)
     }
     
-    // MARK: - Notifications
-    @objc private func keyboardWillShow(_ notification: Notification) {
+    // MARK: - Keyboard Handler
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
         guard
             let userInfo = notification.userInfo,
             let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height,
@@ -111,12 +113,13 @@ final class LoginViewController: UIViewController {
         UIView.animate(
             withDuration: keyboardAnimationDuration.doubleValue,
             delay: 0,
-            options: options) {
-                self.view.layoutIfNeeded()
-            }
+            options: options
+        ) {
+            self.view.layoutIfNeeded()
+        }
     }
     
-    @objc private func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         guard
             let userInfo = notification.userInfo,
             let keyboardAnimationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber),
@@ -131,8 +134,9 @@ final class LoginViewController: UIViewController {
         UIView.animate(
             withDuration: keyboardAnimationDuration.doubleValue,
             delay: 0,
-            options: options) {
-                self.view.layoutIfNeeded()
-            }
+            options: options
+        ) {
+            self.view.layoutIfNeeded()
+        }
     }
 }

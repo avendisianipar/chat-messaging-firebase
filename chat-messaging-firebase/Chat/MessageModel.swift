@@ -33,14 +33,14 @@ struct MessageModel: MessageType {
     var downloadURL: URL?
     
     init(user: User, content: String) {
-        sender = Sender(senderId: user.uid, displayName: AppSettings.displayName)
+        sender = SenderModel(senderId: user.uid, displayName: AppSettings.displayName)
         self.content = content
         sentDate = Date()
         id = nil
     }
     
     init(user: User, image: UIImage) {
-        sender = Sender(senderId: user.uid, displayName: AppSettings.displayName)
+        sender = SenderModel(senderId: user.uid, displayName: AppSettings.displayName)
         self.image = image
         content = ""
         sentDate = Date()
@@ -60,7 +60,7 @@ struct MessageModel: MessageType {
         id = document.documentID
         
         self.sentDate = sentDate.dateValue()
-        sender = Sender(senderId: senderId, displayName: senderName)
+        sender = SenderModel(senderId: senderId, displayName: senderName)
         
         if let content = data["content"] as? String {
             self.content = content

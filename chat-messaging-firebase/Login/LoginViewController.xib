@@ -24,23 +24,34 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAPA " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-y7-ZTn">
-                    <rect key="frame" x="137" y="68" width="140" height="60"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QRK-UC-yhx">
+                    <rect key="frame" x="95.5" y="83" width="223" height="98"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋🏻 SAPA " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od8-y7-ZTn">
+                            <rect key="frame" x="10" y="0.0" width="203.5" height="60"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messaging Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-pm-vb1">
+                            <rect key="frame" x="0.0" y="68" width="223" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxz-ip-iaB">
-                    <rect key="frame" x="20" y="693.5" width="374" height="82.5"/>
+                    <rect key="frame" x="20" y="673" width="374" height="82"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a display name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYb-wX-sMN">
-                            <rect key="frame" x="12" y="12" width="180.5" height="21"/>
+                            <rect key="frame" x="12" y="12" width="180.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex. Johnny Appleseed" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-NG-uAa">
-                            <rect key="frame" x="12" y="45" width="350" height="25.5"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex. Johnny Yes Papa" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-NG-uAa">
+                            <rect key="frame" x="12" y="44.5" width="350" height="25.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
                         </textField>
@@ -56,11 +67,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qX1-Zx-vHZ">
-                    <rect key="frame" x="147.5" y="796" width="119" height="46"/>
+                    <rect key="frame" x="136" y="790" width="142" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paf-Zb-zKz">
-                            <rect key="frame" x="18" y="8" width="83" height="30"/>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <rect key="frame" x="18" y="8" width="106" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <state key="normal" title="Get Started">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -82,15 +93,15 @@
             <viewLayoutGuide key="safeArea" id="sgo-rY-cLH"/>
             <color key="backgroundColor" systemColor="systemTealColor"/>
             <constraints>
-                <constraint firstItem="qX1-Zx-vHZ" firstAttribute="top" secondItem="Wxz-ip-iaB" secondAttribute="bottom" constant="20" id="51K-xv-Nxh"/>
-                <constraint firstItem="Od8-y7-ZTn" firstAttribute="centerX" secondItem="rcY-KN-Fh3" secondAttribute="centerX" id="6Mo-Zv-lEZ"/>
+                <constraint firstItem="qX1-Zx-vHZ" firstAttribute="top" secondItem="Wxz-ip-iaB" secondAttribute="bottom" constant="35" id="51K-xv-Nxh"/>
+                <constraint firstItem="QRK-UC-yhx" firstAttribute="top" secondItem="sgo-rY-cLH" secondAttribute="top" constant="35" id="AEV-oI-zH5"/>
                 <constraint firstItem="Wxz-ip-iaB" firstAttribute="leading" secondItem="sgo-rY-cLH" secondAttribute="leading" constant="20" id="Ghl-9i-zyh"/>
                 <constraint firstItem="sgo-rY-cLH" firstAttribute="trailing" secondItem="Wxz-ip-iaB" secondAttribute="trailing" constant="20" id="pcI-Gj-2wP"/>
-                <constraint firstItem="Od8-y7-ZTn" firstAttribute="top" secondItem="sgo-rY-cLH" secondAttribute="top" constant="20" id="tdd-F5-9RV"/>
+                <constraint firstItem="QRK-UC-yhx" firstAttribute="centerX" secondItem="sgo-rY-cLH" secondAttribute="centerX" id="rqu-ft-hmU"/>
                 <constraint firstItem="qX1-Zx-vHZ" firstAttribute="centerX" secondItem="rcY-KN-Fh3" secondAttribute="centerX" id="vl7-kd-5iX"/>
                 <constraint firstItem="sgo-rY-cLH" firstAttribute="bottom" secondItem="qX1-Zx-vHZ" secondAttribute="bottom" constant="20" id="yuJ-8x-iRD"/>
             </constraints>
-            <point key="canvasLocation" x="-504" y="-224"/>
+            <point key="canvasLocation" x="-504.34782608695656" y="-224.33035714285714"/>
         </view>
     </objects>
     <resources>
